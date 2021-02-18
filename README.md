@@ -1,6 +1,6 @@
 ###### ACCOUNTS
 - **account list**
-  > Prints a list of account saved in Gohan
+  > Prints a list of accounts saved in Gohan
 - **account create [name]****
   > Creates an account and saves it as [name]
 - **account load [name]**
