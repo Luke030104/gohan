@@ -11,7 +11,7 @@
 - **apk decompile**
   > Decompiles /data/[global|japan]/apk/latest.apk in /data/[global|japan]/apk/latest-content/
   (if APK doesnt exist, it downloads it by issuing 'apk download')
-- **apk info****
+- **apk info**
   > Grabs a decompiled APK infos using the following path : /data/[global|japan]/apk/latest-content/
   (in decompiled APK doesnt exist, it decompiles it by issuing 'apk decompile')
 ###### ASSETS
