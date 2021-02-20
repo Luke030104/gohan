@@ -1,7 +1,7 @@
 ###### ACCOUNTS
 - **account list**
   > Prints a list of accounts saved in Gohan
-- **account create [name]****
+- **account create [name]**
   > Creates an account and saves it as [name]
 - **account load [name]**
   > Loads account named as [name]
