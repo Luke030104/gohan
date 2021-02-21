@@ -1,10 +1,10 @@
 ###### ACCOUNTS
 - **account list**
-  > Prints a list of accounts saved in Gohan
+  > Prints a list of accounts saved in database
 - **account create [name]**
-  > Creates an account and saves it as [name]
+  > Creates an account and saves it as [name] in database
 - **account load [name]**
-  > Loads account named as [name]
+  > Loads account named as [name] in database
 ###### APK
 - **apk download**
   > Downloads the latest game APK from QooApp in the following path : /data/[global|japan]/apk/latest.apk
@@ -13,17 +13,16 @@
   (if APK doesnt exist, it downloads it by issuing 'apk download')
 - **apk info**
   > Grabs a decompiled APK infos using the following path : /data/[global|japan]/apk/latest-content/
-  (in decompiled APK doesnt exist, it decompiles it by issuing 'apk decompile')
+  (if decompiled APK doesnt exist, it decompiles it by issuing 'apk decompile')
 ###### ASSETS
 - **assets refresh**
-  > Refreshes assets timestamp to match with the server one.
+  > Refreshes assets timestamp to match with the server one. If your actual timestamp is not 0 (you already have assets loaded), and new assets are detected, it downloads them.
 - **assets download [timestamp]**
   > Downloads game assets from a given timestamp. Enter 0 to download all assets.
 - **assets get [query]**
-  > Searches through game assets to download a specific asset.
-  (when the process is finished, enter 'y' to unpack downloaded assets)
+  > Searches through game assets to download specific assets.
 - **assets unpack [optional: path]**
-  > [GUI] Unpacks given game assets (CPK/USM/AWB). Tip : input 'all' as path to unpack all assets recursively.
+  > [GUI] Unpacks given game assets ([!] CPK ONLY). If no path is given, unpacks all assets recursively.
   /!\ if a path is given, it must be like : character/card/100000.cpk (/data/[global/japan]/assets/[PATH])
   (if the given asset doesn't exist, it downloads it by issuing 'assets get [path]')
 - **assets repack [path]**
@@ -32,34 +31,17 @@
 - **database download**
   > Downloads game database in the following path : /data/[global/japan]/database/database.db
 - **database decrypt**
-  > Decrypts game database. The database must be previously downloaded.
+  > Decrypts game database in the following path : /data/[global/japan]/database/database.db. The database must be previously downloaded.
   (if the database is not previously downloaded, it downloads it by issuing 'database download')
 ###### API
 - **login**
   > Logs into the game, and prints current tokens.
-- **retrieve [events/news/gashas]**
-  > Fetches data of current game events/news/gashas using loaded token.
+- **retrieve news [optional: news_id]**
+  > Fetches data of given news ID using loaded account in : /data/[global/japan]/news/{news_id}/. If no news ID is given, retrieves every news.
 ###### CARDS
-- **card info [id]**
-  > Prints following infos on a card :
-  - Leader skill name
-  - Leader skill description
-  - Passive skill name
-  - Passive skill description
-  - Transformation infos
-  - Active Skill infos
-  - Special Attacks infos
-  - EZA infos
-  - Links infos
-  - Animation files (.lwf,...)
-  [TO DO]
 - **card art [card id]**
   > Merges parts of a cards by using character,effect,bg.
   (if they don't exist, it unpacks them by issuing 'assets unpack character/card/[card id].cpk')
-- **card thumb [card id]**
-  > Merges both thumb of the given card & the thumb template.
-  (needs thumb of the card, thumb template and game database to fetch card element and rarity.
-  if they aren't already downloaded, it downloads them automatically.)
 ###### MISC
 - **config**
   > Prints Gohan's config
