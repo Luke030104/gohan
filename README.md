@@ -14,6 +14,8 @@
 - **apk info**
   > Grabs a decompiled APK infos using the following path : /data/[global|japan]/apk/latest-content/
   (if decompiled APK doesnt exist, it decompiles it by issuing 'apk decompile')
+- **apk refresh**
+  > Downloads, decompiles and grab infos using APK. Refreshes APK hash in case new APK is available.
 ###### ASSETS
 - **assets refresh**
   > Refreshes assets timestamp to match with the server one. If your actual timestamp is not 0 (you already have assets loaded), and new assets are detected, it downloads them.
@@ -27,12 +29,17 @@
   (if the given asset doesn't exist, it downloads it by issuing 'assets get [path]')
 - **assets repack [path]**
   > Repacks given folder into one CPK. Ex. 'assets repack character/card/thumb/' : packs the content of /data/[global/japan]/assets/character/card/thumb/ into /data/[global/japan]/assets/character/card/thumb.cpk
+###### BINARIES
+- **binaries [apktool/cpk]**
+  > Downloads given binaries.
 ###### DATABASE
 - **database download**
   > Downloads game database in the following path : /data/[global/japan]/database/database.db
 - **database decrypt**
   > Decrypts game database in the following path : /data/[global/japan]/database/database.db. The database must be previously downloaded.
   (if the database is not previously downloaded, it downloads it by issuing 'database download')
+- **database refresh**
+  > Refreshes database timestamp to match with the server one. If your actual timestamp is not 0 (you already have database loaded), and new database is detected, it downloads it.
 ###### API
 - **login**
   > Logs into the game, and prints current tokens.
@@ -45,3 +52,7 @@
 ###### MISC
 - **config**
   > Prints Gohan's config
+- **clear**
+  > Clears the CMD.
+ - **exit**
+  > Restart the program.
